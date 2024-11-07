@@ -1,5 +1,7 @@
 # 📅 日期時間格式轉換器
 
+![image](https://github.com/Coizvixxy/convert-date/blob/main/image.png)
+
 這是一個便利的 Chrome 擴充功能，可以快速將日期時間轉換成中文和英文格式。
 
 ## ✨ 功能特點
