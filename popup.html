@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        width: 400px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      .result-item {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 4px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3367d6;
+      }
+      .format-container {
+        margin-bottom: 10px;
+      }
+      .code-display {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: monospace;
+        white-space: pre-wrap;
+        word-break: break-all;
+        margin: 5px 0;
+      }
+      #resultsList {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      .clear-btn {
+        width: auto;
+        background-color: #ea4335;
+        margin-top: 10px;
+        float: right;
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <label>選擇日期：</label>
+      <input type="date" id="dateInput">
+    </div>
+    <div class="form-group">
+      <label>開始時間：</label>
+      <input type="time" id="startTime">
+    </div>
+    <div class="form-group">
+      <label>結束時間：</label>
+      <input type="time" id="endTime">
+    </div>
+    <button id="convertBtn">轉換</button>
+    
+    <div class="result">
+      <div id="resultsList"></div>
+      <button class="clear-btn" onclick="clearResults()">清除所有記錄</button>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html> 

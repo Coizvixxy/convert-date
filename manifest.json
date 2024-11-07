@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Date Time Formatter",
+  "version": "1.0",
+  "description": "Convert date time to Chinese and English formats",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+} 

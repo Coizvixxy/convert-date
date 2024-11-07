@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <label>選擇日期：</label>
+      <input type="date" id="dateInput">
+    </div>
+    <div class="form-group">
+      <label>開始時間：</label>
+      <input type="time" id="startTime">
+    </div>
+    <div class="form-group">
+      <label>結束時間：</label>
+      <input type="time" id="endTime">
+    </div>
+    <button onclick="convertDateTime()">轉換</button>
+    
+    <div id="result" class="result">
+      <div>
+        <strong>中文格式：</strong>
+        <p id="chineseResult"></p>
+      </div>
+      <div>
+        <strong>English Format：</strong>
+        <p id="englishResult"></p>
+      </div>
+    </div>
+
+    <script>
+      function convertDateTime() {
+        const date = document.getElementById('dateInput').value;
+        const startTime = document.getElementById('startTime').value;
+        const endTime = document.getElementById('endTime').value;
+        
+        if (!date || !startTime || !endTime) {
+          alert('請填寫所有欄位！');
+          return;
+        }
+        
+        google.script.run
+          .withSuccessHandler(function(result) {
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('chineseResult').textContent = result.chinese;
+            document.getElementById('englishResult').innerHTML = result.english;
+          })
+          .formatDateTime(date, startTime, endTime);
+      }
+    </script>
+  </body>
+</html> 
